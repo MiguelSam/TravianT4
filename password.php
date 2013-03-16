@@ -64,16 +64,16 @@ if($database->checkExist($user, 0)){
         	$newPassword = md5($npw);
         	$database->updateUserField($user, password, $newPassword, 0);
             $database->editTableField('newproc', 'proc', 1, 'uid', $getUser['id']);
-			echo 'رمز عبور با موفقیت تغییر یافت.<br /><br />این لینک را ادامه دهید تا <a class="a arrow" href="login.php?user='.$user.'&pw='.$npw.'">ورود</a>';
+			echo 'Password changed successfully.<br /><br />Follow this link to <a class="a arrow" href="login.php?user='.$user.'&pw='.$npw.'">entry</a>';
 			$database->removeProc($getUser['id']);
         }else{
-        	echo '<font color="#FF0000">کد استاندارد اشتباه است!</font>';
+        	echo '<font color="#FF0000">Standard code is wrong!</font>';
         }
     }else{
-        	echo '<font color="#FF0000">رمز عبور اشتباه است!</font>';
+        	echo '<font color="#FF0000">Password is incorrect!</font>';
         }
 }else{
-	echo '<font color="#FF0000">این کاربر ثبت نشده است.</font>';
+	echo '<font color="#FF0000">This user is not registered.</font>';
 }
 ?>
 
